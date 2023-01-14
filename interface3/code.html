@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="projet.css">
+    <title>Compilateur</title>
+
+
+
+<script src="https://pagecdn.io/lib/ace/1.4.5/ace.js" integrity="sha256-5Xkhn3k/1rbXB+Q/DX/2RuAtaB4dRRyQvMs83prFjpM=" crossorigin="anonymous"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+
+<body>
+
+   
+            <br>
+            <h style=" margin-left: 500px; text-align: center; font-size: 18pt;font-family: cursive;"><b>Projet Compilation </b></h><br><br>
+        
+
+    
+
+    <div style="height: 600px; margin-left: 10px;">
+    <div id='container'>
+        <div class="editor_nav" style="padding: 0 ; width: 600px; height: 500px;">
+               <form    action="javascript:void(0);"  style=" margin-bottom: 0px; padding: 0;" >
+                     <button  id='ok'name="submit"  onclick="compile(val())"
+                        style=" 
+                              border-radius:8px;
+                              display:inline-block;
+                              cursor:pointer;
+                              color:#ffffff;
+                              font-family:Arial;
+                              font-size:13pt;
+                              font-weight:bold;
+                              padding:9px 5px;
+                              text-decoration:none;
+                              text-shadow:1px 0px 19px #283966;
+                              margin-left: 160px;
+                              margin-top: 30px;
+                              width: 100px;"> 
+                                <b> Compiler</b></button>
+                    <button  name="execute"  onclick="executer(val())"
+                     style="  
+                              border-radius:8px;
+                              display:inline-block;
+                              cursor:pointer;
+                              color:#ffffff;
+                              font-family:Arial;
+                              font-size:13pt;
+                              font-weight:bold;
+                              padding:9px 5px;
+                              text-decoration:none;
+                              text-shadow:1px 0px 19px #283966;
+                              margin-left: 50px;
+                              width: 100px;">
+                        <b> Executer</b> </button>
+            
+            <input type="hidden" name="code" id="text">
+          </form>
+       <br>
+        
+      <div id="editor" style="height: 600px;" >
+      </div> 
+
+      
+
+
+   </div>
+
+
+
+
+
+
+<br>
+
+   <div class="ifrme_nav" style="width:507px; margin-top: 52px; height: 400px; margin-left: 40px;">
+
+      <div class="nav">
+        <div  class="res"  style="margin-left: 220px; margin-top: 6px; font-family:'Courier New', monospace;font-size: 15pt; font-weight: bold; "> Résultat</div>
+      </div>
+
+       <div   id="show_erreur" style="height: 200px; width: 500px;">  </div><br>
+
+       <div class="nav">
+        <div  class="res"  style="margin-left: 220px; margin-top: 6px; font-family:'Courier New', monospace;font-size: 15pt; font-weight: bold;"> Erreur </div>
+      </div>
+
+      <div   id="show_erreurX" style="height: 200px; border-style: solid; border-width: 0px 1.2px  1.2px 1.2px; border-color: #D3D3D3; background-color: #FEFEFE; width: 500px; margin-left: 10px;">  </div>
+      
+    
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    function update()
+{
+      document.getElementById("text").value =editor.getValue();
+}
+
+
+
+
+function setupEditor()
+{
+  window.editor = ace.edit("editor");
+  editor.setTheme("ace/theme/monokai");
+  editor.getSession().setMode("ace/mode/c_cpp");
+  
+
+  editor.getSession().on('change', function() {
+    update();
+  });
+
+  editor.focus();
+  
+  editor.renderer.setShowGutter(true);
+  editor.setOptions({
+    fontSize: "16pt",
+    showGutter:true,
+    vScrollBarAlwaysVisible:false,
+    enableBasicAutocompletion: false, enableLiveAutocompletion: false
+  });
+
+  editor.setShowPrintMargin(false);
+  editor.setBehavioursEnabled(false);
+}
+
+setupEditor();
+update();
+
+ function val(){
+    return editor.getValue();
+ }
+
+
+</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>  
+     <script>
+
+      var is=0 ;
+        function compile(algo) {
+            $.ajax({
+                type: "POST",
+                url: "compile.php",
+                data: jQuery.param({
+                    "algo": algo,
+                    "type": "comp"
+                }),
+                success: function(html) {
+                    $('#show_erreurX').html("<pre style='color:red ;font-size:16px;padding-left:5px;padding-top:5px;'>" + html + "</pre>");
+                }
+            });
+
+            is=1;
+        }
+
+        function executer(algo) {
+            $.ajax({
+                type: "POST",
+                url: "compile.php",
+                data: jQuery.param({
+                    "algo": algo,
+                    "type": "exec"
+                }),
+                success: function(html) {
+                    html = JSON.parse(html);
+                    if (is == 0){ alert("please press compile button first ");}
+                    else{
+                    $('#show_erreur').html("<pre style='color:black ;font-size:16px;padding-left:5px;padding-top:5px;'>" + html.result + "</pre>");
+
+                    is=0;
+                  }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

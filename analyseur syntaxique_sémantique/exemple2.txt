@@ -1,0 +1,27 @@
+function somme(a : entier):entier deb_fct
+	var somme : entier;
+	somme <- a+2;
+	afficher("la variable est ",somme);
+	retourne a;
+finfct
+
+algo prod
+	var a,q,v,b:entier;
+	const pi = 3.14;
+	var tableau tal[12] : entier;
+debut 
+	 b <- 10;  
+	 afficher("la variable est",somme(b));
+
+	 pour a allant 0 to q faire    // boucle imbriquee
+	 	pour a allant q to 8 faire
+	 		++q;
+	 		q<- (8*9)+2;
+
+	 		pour q allant v to a faire
+	 			a -= 9;
+	 		finpour
+	 	finpour
+	 finpour
+
+fin

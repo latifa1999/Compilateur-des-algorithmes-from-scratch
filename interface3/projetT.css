@@ -1,0 +1,125 @@
+.nav{
+    margin-top: 30px;
+    margin-left: 100px;
+    border-style: none;
+    border-color: #D3D3D3;
+    border-width: 1.2px;
+    height: 28px; 
+}
+
+.res{ 
+    font-size: 12px;
+    font-weight: bold;
+    color:;
+    height: 16px;
+    line-height: 16px;
+}
+
+#show_erreur{
+    margin-left: 10px;
+    border-style: solid;
+    border-width: 0px 1.2px  1.2px 1.2px;
+    border-color: #D3D3D3;
+    height: 90%;
+    background-color: #FEFEFE;
+    width: 500px;
+}
+
+#show_erreurX{
+    margin-left: 10px;
+    border-style: solid;
+    border-width: 0px 1.2px  1.2px 1.2px;
+    border-color: #D3D3D3;
+    height: 90%;
+    background-color: #FEFEFE;
+    width: 677px;
+}
+
+body{
+	border-color: #D3D3D3;
+	font-family: "Open Sans", Arial, sans-serif;
+}
+
+
+button {
+
+  border-radius:8px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:25pt;
+  font-weight:bold;
+  padding:9px 23px;
+  text-decoration:none;
+  text-shadow:1px 0px 19px #283966;
+}
+button:hover {
+  background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color:#476e9e;
+}
+button:active {
+  position:relative;
+  top:1px;
+}
+
+.bg-dark {
+    background-color: #FAFAFA !important;
+    color:#444;
+}
+
+
+.navbar-dark .navbar-brand {
+   color:#444;
+}
+
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+    color: #444;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #444;
+    border-color: #444;
+}
+
+.navbar-toggler-icon{
+	color:black;
+}
+
+
+   
+
+
+html,body { margin:0; padding:0; height:100%; width:100%; overflow: hidden;}
+
+#editor {
+    height: 566px;
+    /*width:90%;*/
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#container {
+    height:100%;
+    width:auto;
+  white-space : nowrap; 
+  overflow : hidden;
+  position:relative;
+  display: flex;
+
+}
+
+
+
+
+
+.compil{
+border-style: solid;
+  border-width: 5px 0px ;
+  border-color:grey;
+  margin-left: 10px;
+
+
+
+}

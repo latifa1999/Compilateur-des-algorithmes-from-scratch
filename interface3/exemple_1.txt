@@ -1,0 +1,9 @@
+algo test
+	var int : i;
+debut
+	lire(i);
+	tantque(i <= 10) faire
+		afficher("N = ", i);
+		i++;
+	fintq
+fin

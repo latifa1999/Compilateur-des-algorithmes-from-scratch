@@ -1,0 +1,59 @@
+
+algo prog
+	var int: s,q,b,a,p,v;
+	var float : l;	
+	var int: h;
+	var char : choix;
+debut 
+l<-2.3;
+a<-1;
+b<-6;
+p<-1;
+v<-0;
+
+choix <- 'c';
+	l<-5+l*(a*b)*l;
+	l<-8.2;
+	a += 1*2;
+	selon (choix) {
+	cas 0 : afficher("le menu est mcd"); break;
+	cas 1 : afficher("kfc"); break;
+	autre : afficher("errooor");
+}
+pour a allant 7 to 10 faire    // boucle imbriquee
+ 	pour a allant 0 to 8 faire
+ 		++p;
+ 		q<- 8*9+2;
+
+ 		pour q allant v to p faire
+ 			a -= 9;
+ 			afficher("la somme est t;",a);
+ 		finpour
+ 	finpour
+ finpour
+
+		/* commentaire sur plusieurs
+				lignes */
+
+tantque(a <0) faire
+  	tantque(a > 10) faire
+
+  		afficher("la valeur est ",a);
+  		a++;
+  	fintq
+fintq
+
+	si(a==1) alors
+		si(a==b) alors
+			afficher("la somme est",a);
+		finsi
+		sinon
+			a<-9;
+	finsi
+
+repeter
+ 	a++;
+jusqu(q<>0); 
+
+	lire(l);
+fin

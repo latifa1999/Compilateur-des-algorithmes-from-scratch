@@ -1,0 +1,65 @@
+function somme(a : entier, b : entier):entier deb_fct
+	var s : entier;
+
+	s <- a + b;
+	s += 5;
+
+ 	afficher(a,a+h);
+	retourne h+1;
+finfct
+
+algo test
+const a = 4;
+var a,b,t:entier;
+var tableau lat[12] : entier;
+var matrice lat[12][3] : entier;
+
+debut
+++t;
+--t;
+si ((a = b) & (v= 3)) alors
+	si(a = b) alors 
+		a <- a + b;
+		afficher("la valeur de a est :",(V+n)*2,b);
+		lire(g,j);
+		proc();       // appel a une procedure 
+	finsi
+sinon 
+	a <- a-b;
+	a = fonct(d);   // appel a une fonction 
+finsi
+
+ pour a allant 7 to q faire    // boucle imbriquee
+ 	pour a allant q to 8 faire
+ 		++p;
+ 		q<- 8*9+2;
+
+ 		pour q allant v to p faire
+ 			a -= 9;
+ 		finpour
+ 	finpour
+ finpour
+
+		/* commentaire sur plusieurs
+				lignes */
+
+tantque(a <0) faire
+  	tantque(a > o) faire
+
+  		afficher("la valeur est ",e);
+  		a++;
+  	fintq
+fintq
+
+repeter
+ 	a++;
+jusqu(q=0);
+
+selon (a) {
+	cas 0 : a++; break;
+	cas 1 : afficher("le switch",f, a+9); break;
+	autre : a<-8*8/97+55;
+}
+/*fin du
+programme */
+fin
